@@ -1,11 +1,40 @@
 {% extends "base.html" %}
 
 {% block body_block %}
-<center>
-	<h1>this is the index.html<h1>
-	<a href="/index/baidu/"> baidu </a>
-	<a href="/index/test/"> test </a>
+
+
+</div>
+
+<div>
+	
+	{% for info in infos %}
+		<h4><span class="label label-danger">等级: {{ info.level }}</span></h4>
+		<span class="list-group-item list-group-item-success">地址: {{ info.place }}            -- 感情状态: {{ info.relationship }}            -- 星座: {{ info.constellation}}</span>   
+		<span class="list-group-item list-group-item-success">邮箱: {{ info.mail }}            -- 博客: {{ info.blog_address }}</span>   
+		<span class="list-group-item list-group-item-success">简介: {{ info.brief_introduction }} </span>   
+	{% endfor %}
+</div>
+
+
+
+<div>
+	<center>
+	{% for counter  in counters %}
+		<span class="label label-warning">微博</span>   [{{ counter.tc }}]
+		<span class="label label-success">关注</span>   [{{ counter.follow }}]
+		<span class="label label-info">粉丝</span>   [{{  counter.fans }}]
+	{% endfor %}
+	</center>
+</div>
+<div>
+	<center>
+	<h1>
+	<a class="navbar-brand hidden-sm" href="/index/baidu/" > test1 </a>
 	<br>
-	<a href="/index"> return to index</a>
+	<a href="/index/test/"> test2 </a>
+	<br>
+	<a href="/index"> index</a>
+	</h1>
+	<br>
 </center>
 {% endblock body_block %}}

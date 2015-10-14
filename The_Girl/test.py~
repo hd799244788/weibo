@@ -1,0 +1,37 @@
+# -*- coding: utf8 -*- 
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'The_Girl.settings')
+import django
+
+django.setup()
+
+
+
+from follow_the_girl.models import tb_counter
+from follow_the_girl.models import tb_follower_info
+
+def add_counter(follow, funs, posts):
+	counter = tb_counter.objects.get_or_create(follow=follow, funs=funs, posts=posts)[0]
+	return counter
+
+def add_follow_info(level, place, constellation, brief_introduction, mail, blog_address, relationship):
+	follow_info = tb_follower_info.objects.get_or_create(level=level, place=place, constellation=constellation, brief_introduction=brief_introduction, mail=mail, blog_address=blog_address, relationship=relationship)[0]
+	return follow_info
+
+def populate():
+	counter = add_counter(3,4,5)
+
+	follow_info = add_follow_info(
+		99,
+                        '在linux下搭建',
+                        'tianping',
+                        'hello world',
+                        '799244788@qq.com',
+                        '799244788@qq.com',
+                        'single dog',               
+	)
+
+# Start execution here!
+if __name__ == '__main__':
+	print "Starting Rango population script..."
+	populate()

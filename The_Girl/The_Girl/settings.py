@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'The_Girl',
+    'follow_the_girl',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'The_Girl.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'itcast',
+        'NAME': 'thegirl',
         'USER': 'root',
         'PASSWORD': 'itcast',
         'HOST': '',
