@@ -4,8 +4,6 @@
 
 {% block body_block %}
 <div class="hero-unit">
-    <h1>Login to followGirl</h1>
-<center>
     <div class="container">
         <form class="form-signin span4" id="login_form" method="post" action="/index/login/">
             <h2 class="form-signin-heading">Please sign in</h2>
@@ -17,15 +15,21 @@
 
 
             {% csrf_token %}
-            Username: <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="20"/>
+             <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="20"/>
+             <span class="label label-info">Username:</span>
             <br/>
-            Password  : <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="20"/>
+
+             <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="20"/>
+             <span class="label label-info">Password  :</span>
             <br/>
-            <button class="btn btn-primary" type="submit">Sign in</button>
+                        <br/>
+            <button class="btn btn-primary btn-sm" type="submit">Sign in</button>
+            <span style="font-size:12px;">&nbsp;&nbsp;&nbsp;</span>
+            <a class="btn btn-success btn-sm" href="/index/register/">Register</a>
         </form>
     </div>
     <!-- /container -->
 </div>
-</center>
+
 
 {% endblock %}

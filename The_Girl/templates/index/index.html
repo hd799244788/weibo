@@ -1,12 +1,6 @@
 {% extends "base.html" %}
-
 {% block body_block %}
-
-
-</div>
-
-<div>
-	
+<div>	
 	{% for info in infos %}
 		<h4><span class="label label-danger">等级: {{ info.level }}</span></h4>
 		<span class="list-group-item list-group-item-success">地址: {{ info.place }}            -- 感情状态: {{ info.relationship }}            -- 星座: {{ info.constellation}}</span>   

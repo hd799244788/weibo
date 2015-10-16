@@ -31,13 +31,26 @@ class tb_follow_info(models.Model):
 	def __unicode__(self):
 		return self.level
 
-class UserProfile(models.Model):
-	# A required line - links a UserProfile to User.
-	user = models.OneToOneField(User)
-	
-	# The additional attributes we wish to include.
-	website = models.URLField(blank=True)
-	picture = models.ImageField(upload_to='profile_images', blank=True)
-	
+class tb_findout(models.Model):
+	use_id = models.CharField(max_length=128)
+	picture = models.CharField(max_length=128)
+	screen_name = models.CharField(max_length=128)
+	loction = models.CharField(max_length=128)
+	description = models.CharField(max_length=128)
+	followers_count = models.CharField(max_length=128)
+	friends_count = models.CharField(max_length=128)
+	statuses_count = models.CharField(max_length=128)
 	def __unicode__(self):
-		return self.user.username
+		return self.picture
+
+class tb_struct(models.Model):
+	w_id = models.CharField(max_length=128)
+	screen_name = models.CharField(max_length=128)
+	location = models.CharField(max_length=128)
+	profile_image_url = models.CharField(max_length=128)
+	gender = models.CharField(max_length=128)
+	followers_count = models.CharField(max_length=128)
+	friends_count = models.CharField(max_length=128)
+	statuses_count = models.CharField(max_length=128)
+	def __unicode__(self):
+		return self.w_id
