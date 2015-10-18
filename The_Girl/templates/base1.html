@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	{% load static %}
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="huangdi">
+	<title>
+    		{% block title_block %}  女神湾 {% endblock %}
+  	</title>
+	<!-- Site CSS -->
+             <link rel="shortcut icon" href="{% static 'icon/favicon-0.ico' %}" />
+	<link rel="shortcut icon" href="http://127.0.0.1/static/icon/favicon-0.ico" />
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<link rel="stylesheet" media="all" href="http://7xi85d.com2.z0.glb.qiniucdn.com/assets/application-96b0a9f23afa994b7772ccd58668e8b2.css" />
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://static.bootcss.com/www/assets/css/site.min.css?v5" rel="stylesheet">
+	<style>
+	.job-hot {
+	    position: absolute;
+	    color: #d9534f;
+	    right: 0;
+	    top: 15px;
+	}
+	</style>
+</script>
+</head>
+<body class="home-template">
+
+{% block body_block %} {% endblock %}
+</body>
+</html>
+<!-- static home page -->

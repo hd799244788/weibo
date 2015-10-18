@@ -12,6 +12,8 @@
      <input type="submit" value="找人" />
     </div>
    </form>
+   </div>
+
 <div>
    {% if id %}
    <p>
@@ -19,11 +21,24 @@
    微博昵称:{{ screen_name }}
    地址:{{location}}
    性别:{{ gender }}
+   <br/>
   关注:{{ follow }}
   粉丝:{{ fans }}
   微博:{{ tc }}
    </p>
    {% endif %}
 </div>
+<form action="/index/save_id/" method="post">
+    <div>
+      {% if if_followed %}
+   <p>
+     this have followed!
+   </p>
+   {% endif %}
+     <input type="hidden" name="id" value="{{id}}:{{screen_name}}:{{location}}:{{ gender }}:{{ follow }}:{{ fans }}:{{ tc }}:{{ profile_image_url }}:{{url}}" />
+     <input type="submit" value="开始尾随" />
+    </div>
+   </form>
   </div>
+
 {% endblock body_block %}}

@@ -1,39 +1,35 @@
 {% extends "base.html" %}
 {% block body_block %}
-<div>	
-	{% for info in infos %}
-		<h4><span class="label label-danger">等级: {{ info.level }}</span></h4>
-		<span class="list-group-item list-group-item-success">地址: {{ info.place }}            -- 感情状态: {{ info.relationship }}            -- 星座: {{ info.constellation}}</span>   
-		<span class="list-group-item list-group-item-success">邮箱: {{ info.mail }}            -- 博客: {{ info.blog_address }}</span>   
-		<span class="list-group-item list-group-item-success">简介: {{ info.brief_introduction }} </span>   
-	{% endfor %}
-</div>
+<table>
+<tbody>
+<tr>
+      <td valign="top"><img src="{{ who.profile_image_url }}" alt="头像" class="por" /></td>
+      <td valign="top">
+       <div class="ut">
+        <span class="ctt">{{ who.screen_name }}
+        {% if verified %}
+        	<img src="http://u1.sinaimg.cn/upload/2011/07/28/5338.gif" alt="V" />
+        {% endif %}
+        &nbsp;{{who.gender}}/{{  who.place }} &nbsp; </span>
+        <br />
+        <span class="ctt" style="word-break:break-all; width:50px;">{{ url }} {{ who.blog_address }}</span>
+        <br />
+        <a href="http://weibo.cn/{{ who.weibo_id }}/info">资料</a>&nbsp;
+       </div></td>
+     </tr>
+</tbody>
+</table>
+<span class="label label-warning">微博</span>   [{{ who.tc }}]
+<span class="label label-success">关注</span>   [{{ who.follow }}]
+<span class="label label-info">粉丝</span>   [{{  who.fans }}]
+<br/>
+<br/>
+<span class="label label-warning">新增微博</span>   {{ who.tc_add }}
+<br/>
+<span class="label label-success">新增关注</span>   {{ who.follow_add }}
+<br/>
+<span class="label label-info">新增粉丝</span>   {{  who.fans_add }}
 
+<iframe class="pms" src="/index/weibo/" width="980px" frameborder="0" height="400px"></iframe>
 
-
-<div>
-	<center>
-	{% for counter  in counters %}
-		<span class="label label-warning">微博</span>   [{{ counter.tc }}]
-		<span class="label label-success">关注</span>   [{{ counter.follow }}]
-		<span class="label label-info">粉丝</span>   [{{  counter.fans }}]
-		<br>
-		<br>
-	{% endfor %}
-	</center>
-</div>
- 	<li><a href="/index/login/">Login</a></li>
- 	<li><a href="/index/search/">sreach</a></li>
- 	<li><a href="/index/register/">register</a></li>
-<div>
-	<center>
-	<h1>
-	<a class="navbar-brand hidden-sm" href="/index/login/" > test1 </a>
-	<br>
-	<a href="/index/test/"> test2 </a>
-	<br>
-	<a href="/index"> index</a>
-	</h1>
-	<br>
-</center>
 {% endblock body_block %}}

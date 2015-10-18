@@ -5,7 +5,7 @@
 {% block body_block %}
 <div class="hero-unit">
     <div class="container">
-        <form class="form-signin span4" id="login_form" method="post" action="/index/login/">
+        <form class="form-signin span4" id="login_form" method="post" action="/">
             <h2 class="form-signin-heading">Please sign in</h2>
             {% if bad_details %}
             <p><strong>Your username and/or password were incorrect!</strong></p>
@@ -16,11 +16,11 @@
 
             {% csrf_token %}
              <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="20"/>
-             <span class="label label-info">Username:</span>
+             <span class="label label-info">Username</span>
             <br/>
 
              <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="20"/>
-             <span class="label label-info">Password  :</span>
+             <span class="label label-info">Password  </span>
             <br/>
                         <br/>
             <button class="btn btn-primary btn-sm" type="submit">Sign in</button>

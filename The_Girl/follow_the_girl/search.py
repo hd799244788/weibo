@@ -14,10 +14,10 @@ def user_show(Request,name):
 	#how much day's data we will to search ,default is one week
 	search_para={
 			'screen_name':name.encode('utf-8'),
+			#'screen_name':name,
 			'source_key':820439504,
 		}
 	usershow=usershow%search_para
-	print usershow
 	username = '123lixueyan@163.com'
 	password = 'abcd134556'
 	base64string = base64.encodestring('%s:%s' % (username, password))[:-1] #注意哦，这里最后会自动添加一个\n
@@ -26,10 +26,9 @@ def user_show(Request,name):
 	req=urllib2.Request(usershow)
 	try:
 		req.add_header("Authorization", authheader)
-		print req
 		handle = urllib2.urlopen(req).read()
 	except Exception, e:
 		return 0	
-	print handle.decode("utf-8").encode("utf-8")
 	allshow_dict =simplejson.loads(handle)
+             #allshow_dict['gender'] = "男"
 	return allshow_dict
