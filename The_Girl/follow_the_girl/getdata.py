@@ -3,8 +3,12 @@ import re
 import urllib2
 from follow_the_girl.models import tb_follow_info, tb_counter ,tb_use_map_id
 from bs4 import BeautifulSoup
-
+from django.contrib.auth.models import User
 #getdata from org  and save into db
+
+def add_User(username,email,password):
+	User.objects.get_or_create(username=username,email=email,password=password)
+	return True
 
 def add_tb_follow_info(weibo_id,user_id='1234567',screen_name='',place='',gender='' ,profile_image_url = '',blog_address='',follow='',fans='',tc='',follow_add='0',fans_add='0',tc_add='0'):
 	tb_follow_info.objects.get_or_create(weibo_id=weibo_id,user_id=user_id,screen_name=screen_name,place=place ,gender=gender,profile_image_url=profile_image_url,blog_address=blog_address,follow=follow,fans=fans,tc=tc,follow_add=follow_add,fans_add=fans_add,tc_add=tc_add)

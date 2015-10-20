@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base3.html" %}
 
 {% block title %}Register with floowGirl{% endblock %}
 
@@ -9,27 +9,22 @@
     <div class="container">
         {% if registered %}
         <p> Thank you for registering.
-
-        <p><a href="/index/login/">Login</a> when you are ready to rango.</p>
+        <p><a href="/index/login/">Login</a> when you are ready.</p>
         {% else %}
-
-        <form class="form-signin span8" id="user_form" method="post" action="/index/register/"
-              enctype="multipart/form-data">
-            {% csrf_token %}
-            <h2 class="form-signin-heading">Sign up Here</h2>
-            <!-- Display each form here -->
-
-            {% for field in user_form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text}}<br/>
-            {{ field }}<br/>
-            {% endfor %}
-
-            <br/>
-            <!-- Provide a button to click to submit the form. -->
-            <input class="btn btn-primary" type="submit" name="submit" value="Register"/>
-        </form>
-        {% endif %}
-    </div>
+    <form id="slick-login" action="" method="post" class="placeholder">
+        <div>
+            {{ form.username }}
+            {{ form.subject.errors }}
+        </div>
+        <div>
+            <span>{{ form.email }}</span>{{ form.email.errors }}
+        </div>
+        <div>
+            {{ form.password }}
+            {{ form.password.errors }}
+        </div>
+        <input type="submit" value="注册">
+    </form>
+    {%endif%}
 </div>
 {% endblock %}

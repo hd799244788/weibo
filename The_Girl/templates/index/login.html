@@ -1,35 +1,18 @@
-{% extends "base.html" %}
-
-{% block title %}Login to followGirl{% endblock %}
+{% extends "base3.html" %}
+{% load static %}
+{% block title_block %}Login to followGirl{% endblock %}
+    <meta charset="utf-8">
+    <meta name="description" content="slick Login">
+    <meta name="author" content="Webdesigntuts+">
+    <link rel="stylesheet" type="text/css" href="static" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+    <script type="text/javascript" src="placeholder.js"></script>
 
 {% block body_block %}
-<div class="hero-unit">
-    <div class="container">
-        <form class="form-signin span4" id="login_form" method="post" action="/">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            {% if bad_details %}
-            <p><strong>Your username and/or password were incorrect!</strong></p>
-            {% elif disabled_account %}
-            <p><strong>Your Rango account is currently disabled; we can't log you in!</strong></p>
-            {% endif %}
-
-
-            {% csrf_token %}
-             <input type="text" class="input-block-level" placeholder="Username" name="username" value="" size="20"/>
-             <span class="label label-info">Username</span>
-            <br/>
-
-             <input type="password" class="input-block-level" placeholder="Password" name="password" value="" size="20"/>
-             <span class="label label-info">Password  </span>
-            <br/>
-                        <br/>
-            <button class="btn btn-primary btn-sm" type="submit">Sign in</button>
-            <span style="font-size:12px;">&nbsp;&nbsp;&nbsp;</span>
-            <a class="btn btn-success btn-sm" href="/index/register/">Register</a>
-        </form>
-    </div>
-    <!-- /container -->
-</div>
-
-
+    <form id="slick-login" action="/" method="POST">
+        <label for="username">username</label><input type="text" name="username" class="placeholder" placeholder="me@tutsplus.com">
+        <label for="password">password</label><input type="password" name="password" class="placeholder" placeholder="password">
+        <input type="submit" value="Log In">
+    </form>
 {% endblock %}

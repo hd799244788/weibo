@@ -2,12 +2,20 @@
 <html lang="zh-CN">
 	{% load static %}
 	<head>
+    
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="huangdi">
 	<title>
     		{% block title_block %}  女神湾 {% endblock %}
   	</title>
+                <meta charset="utf-8">
+    <meta name="description" content="slick Login">
+    <meta name="author" content="Webdesigntuts+">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loginstyle.css' %}" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+    <script type="text/javascript" src="placeholder.js"></script>
 	<!-- Site CSS -->
              <link rel="shortcut icon" href="{% static 'icon/favicon-0.ico' %}" />
 	<link rel="shortcut icon" href="http://127.0.0.1/static/icon/favicon-0.ico" />
@@ -16,7 +24,8 @@
 	<link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 	<link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="http://static.bootcss.com/www/assets/css/site.min.css?v5" rel="stylesheet">
-	<style>
+	
+    <style>
 	.job-hot {
 	    position: absolute;
 	    color: #d9534f;
@@ -24,7 +33,14 @@
 	    top: 15px;
 	}
 	</style>
-</script>
+
+    <script>
+      var _hmt = _hmt || [];
+    </script>
+    
+    <link rel="canonical" href="http://www.bootcss.com/" />
+    <meta name="generator" content="Ghost 0.5" />
+    <link rel="alternate" type="application/rss+xml" title="Bootstrap中文网" href="http://www.bootcss.com/rss/" />
 </head>
 <body class="home-template">
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -41,7 +57,6 @@
             <ul class="nav navbar-nav">
                
                 {% if user.is_authenticated %}
-                    <li><h2 onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'less'])" >Welcome,  {{ user.username }}.   </h2></li>
                     <li><a href="/index/search/"  onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'less'])">搜人    </a></li>
                     <li><i class="fa fa-fire job-hot"></i><a href="/index/logout"  onclick="_hmt.push(['_trackEvent', 'navbar', 'click', 'navbar-高薪工作'])">退出    </a></li>
                 {% else %}
@@ -59,5 +74,6 @@
 </div>
 
 {% block body_block %} {% endblock %}
+</body>
 </html>
 <!-- static home page -->
